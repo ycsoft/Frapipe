@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
  * Created by admin on 2018/3/9.
  */
 
-
 @RestController
 @EnableAutoConfiguration
 @ComponentScan
@@ -37,7 +36,7 @@ public class FraHttpApplication {
      */
     @PostMapping(value = "/put")
     public String putData(@RequestBody String data) {
-        LOG.info("POST请求: " + data);
+
         Gson gson = new Gson();
         PosData pd = gson.fromJson(data, PosData.class);
         FraPipe pipe = new FraPipe();
